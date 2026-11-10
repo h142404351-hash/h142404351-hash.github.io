@@ -18,12 +18,18 @@ html,body{height:100%;background:#04070D;overflow:hidden;
 #stage{position:relative;width:1280px;height:720px;transform-origin:top left}
 .slide{position:absolute;inset:0;width:1280px;height:720px;overflow:hidden;opacity:0;visibility:hidden;
   transition:opacity .35s ease;background:var(--paper);color:var(--ink)}
+.slide:not(.theme-dark){background-color:var(--paper);
+  background-image:linear-gradient(rgba(65,105,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(65,105,255,.045) 1px,transparent 1px);
+  background-size:64px 64px}
+.slide::after{content:attr(data-n);position:absolute;right:34px;bottom:44px;font-size:150px;font-weight:900;
+  letter-spacing:-8px;color:rgba(65,105,255,.055);z-index:0;pointer-events:none;line-height:1}
+.theme-dark::after{color:rgba(120,170,255,.07)}
 .slide.active{opacity:1;visibility:visible;z-index:2}
 .theme-dark{background:radial-gradient(1100px 700px at 78% 8%,#12305E 0%,#0B1426 55%,#081020 100%);color:#EAF0FA}
 .pad{position:absolute;inset:0;padding:42px 62px}
 .kicker{font-size:10.5px;letter-spacing:.18em;color:var(--blue);font-weight:800;text-transform:uppercase}
 .theme-dark .kicker{color:var(--cyan)}
-h1{font-size:31px;line-height:1.22;font-weight:800;letter-spacing:-.6px;margin-top:10px}
+h1{font-size:33px;line-height:1.22;font-weight:800;letter-spacing:-.6px;margin-top:10px}
 h1 .thin{font-weight:400;color:var(--muted)}
 .sub{margin-top:10px;font-size:12.5px;line-height:1.6;color:var(--muted);max-width:760px}
 .theme-dark .sub{color:#A9BCD6}
@@ -42,7 +48,9 @@ h1 .thin{font-weight:400;color:var(--muted)}
 .g2{grid-template-columns:1fr 1fr}
 .g3{grid-template-columns:1fr 1fr 1fr}
 .g4{grid-template-columns:repeat(4,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.card{position:relative;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px;
+  box-shadow:0 2px 10px rgba(20,40,80,.04)}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--blue),var(--cyan))}
 .card.soft{background:#F7FAFF}
 .card.dark{background:var(--dpanel);border-color:#1E3556;color:#DCE7F7}
 .card h3{font-size:14px;font-weight:800;letter-spacing:.2px}
@@ -50,7 +58,14 @@ h1 .thin{font-weight:400;color:var(--muted)}
 .card p,.card li{font-size:10.5px;line-height:1.55;color:#41506A}
 .card li{margin-left:12px}
 .card .mini{font-size:9.5px;color:#7B8AA0;margin-top:6px}
+.theme-dark .card{background:var(--dpanel);border-color:#1E3556;box-shadow:none}
+.theme-dark .card::before{opacity:.9}
+.theme-dark .card h3,.theme-dark .card .idx{color:#EAF0FA}
 .theme-dark .card p,.theme-dark .card li{color:#BCD0E8}
+.theme-dark table.mx td{background:var(--dpanel);color:#BCD0E8;border-color:#1E3556}
+.theme-dark table.mx tr:nth-child(even) td{background:#152946}
+.theme-dark .stat{background:var(--dpanel);border-color:#1E3556}
+.theme-dark .shot{border-color:#1E3556}
 .tag{display:inline-block;font-size:9.5px;font-weight:700;color:var(--blue);border:1px solid #C9D8FF;
   background:#EEF3FF;border-radius:999px;padding:3px 9px;margin:3px 4px 0 0}
 .theme-dark .tag{color:var(--cyan);border-color:#2A4A78;background:#10233C}
@@ -111,7 +126,7 @@ h1 .thin{font-weight:400;color:var(--muted)}
 
 /* table */
 table.mx{width:100%;border-collapse:collapse;font-size:9.8px;background:#fff;border-radius:12px;overflow:hidden}
-table.mx th{background:#0B1426;color:#fff;text-align:left;padding:9px 10px;font-size:9.5px;font-weight:700;letter-spacing:.03em}
+table.mx th{background:linear-gradient(90deg,#0B1426,#173A78);color:#fff;text-align:left;padding:9px 10px;font-size:9.5px;font-weight:700;letter-spacing:.03em}
 table.mx td{padding:8px 10px;border-bottom:1px solid #E3EAF6;color:#3E4D66;line-height:1.45;vertical-align:top}
 table.mx tr:nth-child(even) td{background:#F7FAFF}
 table.mx td:first-child{font-weight:700;color:#0B1426;white-space:nowrap}
@@ -132,6 +147,11 @@ table.mx td:first-child{font-weight:700;color:#0B1426;white-space:nowrap}
 .lightbox{position:fixed;inset:0;background:rgba(4,8,16,.92);display:none;align-items:center;justify-content:center;z-index:99;padding:40px;cursor:zoom-out}
 .lightbox.on{display:flex}
 .lightbox img{max-width:92vw;max-height:88vh;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.p10 .card{padding:11px 14px}
+.p10 .shots img{height:196px;object-fit:cover;object-position:top}
+.p10 .shot .cap{padding:6px 10px}
+.p10 .sub{margin-top:8px}
+.p10 .rule{margin-top:10px}
 
 /* hud */
 #hud{position:fixed;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;gap:14px;
@@ -192,7 +212,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 <div id="zone-l"></div><div id="zone-r"></div>
 <div id="viewport"><div id="stage">
 
-<section class="slide theme-dark cover">
+<section data-n="01" class="slide theme-dark cover">
   <div class="bar"></div>
   <div class="pad">
     <div class="kicker r" style="--d:.05s">RESUME PORTFOLIO · 2027 届应届毕业生</div>
@@ -209,7 +229,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="02" class="slide">
   <div class="pad">
     <div class="kicker r">02 / 我能做什么</div>
     <h1 class="r" style="--d:.06s">从信息研究到业务判断，<span class="thin">我能为团队提供什么</span></h1>
@@ -236,7 +256,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="03" class="slide">
   <div class="pad">
     <div class="kicker r">03 / 工作方法</div>
     <h1 class="r" style="--d:.06s">我如何把一个模糊问题<span class="thin">变成可交付的研究结果</span></h1>
@@ -263,7 +283,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="04" class="slide">
   <div class="pad">
     <div class="kicker r">04 / 教育与经历</div>
     <h1 class="r" style="--d:.06s">从经济学训练，<span class="thin">到行业研究与实际项目</span></h1>
@@ -289,7 +309,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide theme-dark">
+<section data-n="05" class="slide theme-dark">
   <div class="pad">
     <div class="kicker r">05 / 研究思维</div>
     <div class="grid" style="grid-template-columns:1fr 1fr;gap:40px;margin-top:26px">
@@ -319,7 +339,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="06" class="slide">
   <div class="pad">
     <div class="kicker r">06 / 研究项目 · 消费科技出海</div>
     <h1 class="r" style="--d:.06s">中国消费科技品牌<span class="thin">如何在欧美市场建立购买理由？</span></h1>
@@ -347,7 +367,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="07" class="slide">
   <div class="pad">
     <div class="kicker r">07 / 研究项目 · 对比矩阵</div>
     <h1 class="r" style="--d:.06s">不同产品类型，<span class="thin">如何影响消费者的购买决策？</span></h1>
@@ -370,7 +390,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="08" class="slide">
   <div class="pad">
     <div class="kicker r">08 / 研究项目 · 用户证据</div>
     <h1 class="r" style="--d:.06s">如何从公开评价中<span class="thin">理解用户真正关心什么</span></h1>
@@ -399,7 +419,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="09" class="slide">
   <div class="pad">
     <div class="kicker r">09 / 研究项目 · 结论与建议</div>
     <h1 class="r" style="--d:.06s">从品牌对比，<span class="thin">走向可以验证的市场建议</span></h1>
@@ -431,7 +451,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="10" class="slide theme-dark p10">
   <div class="pad">
     <div class="kicker r">10 / 真实作品与研究底稿</div>
     <h1 class="r" style="--d:.06s">我实际整理和制作过<span class="thin">哪些研究材料</span></h1>
@@ -456,7 +476,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="11" class="slide">
   <div class="pad">
     <div class="kicker r">11 / 工作经历 · 海南立诚</div>
     <h1 class="r" style="--d:.06s">在真实评估项目中<span class="thin">建立证据意识与执行能力</span></h1>
@@ -486,7 +506,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="12" class="slide">
   <div class="pad">
     <div class="kicker r">12 / 实习经历 · 新湖期货</div>
     <h1 class="r" style="--d:.06s">理解动态市场信息<span class="thin">如何影响行业判断</span></h1>
@@ -520,7 +540,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="13" class="slide">
   <div class="pad">
     <div class="kicker r">13 / 硕士课程项目</div>
     <h1 class="r" style="--d:.06s">从企业案例理解<span class="thin">战略、转型与实施问题</span></h1>
@@ -552,7 +572,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide">
+<section data-n="14" class="slide">
   <div class="pad">
     <div class="kicker r">14 / 能力与工具</div>
     <h1 class="r" style="--d:.06s">我目前具备的工作基础，<span class="thin">以及正在加强的能力</span></h1>
@@ -583,7 +603,7 @@ ul.plain li::before{content:"";position:absolute;left:0;top:7px;width:4px;height
 </section>
 
 
-<section class="slide theme-dark">
+<section data-n="15" class="slide theme-dark">
   <div class="pad">
     <div class="kicker r">15 / 求职意向与联系</div>
     <h1 class="r" style="--d:.08s;font-size:40px;line-height:1.3">希望把研究能力<br>用在真实的商业问题上</h1>
