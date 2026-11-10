@@ -60,10 +60,12 @@ html,body{height:auto;overflow-x:hidden;overflow-y:auto;background:#04070D}
 .topnav .dot.on{background:#36B8FF}
 body{padding-top:34px}
 @media print{
-  #stage{display:block;max-width:none;padding:0}
-  .slidewrap{aspect-ratio:auto;height:720px;width:1280px;page-break-after:always}
-  .slidewrap .slide{transform:none!important;position:absolute}
-  .topnav{display:none}
+  html,body{background:#fff!important;padding:0!important;margin:0!important}
+  #viewport{padding:0!important}
+  #stage{display:block;max-width:none;padding:0!important;gap:0!important;margin:0!important}
+  .slidewrap{aspect-ratio:auto;height:720px;width:1280px;margin:0;padding:0;border-radius:0;page-break-after:always;break-after:page;overflow:hidden}
+  .slidewrap .slide{transform:none!important;position:absolute;top:0;left:0}
+  .topnav,#hud,#progress{display:none!important}
 }
 
 /* generic */
