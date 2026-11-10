@@ -42,6 +42,35 @@ h1 .thin{font-weight:400;color:var(--muted)}
 .slide.active .r{animation:rise .58s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--d,0s)}
 @keyframes rise{to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.r{opacity:1;transform:none;animation:none!important}.slide{transition:none}}
+/* dark data page */
+.dpage{background:radial-gradient(900px 520px at 74% 12%,#12294A 0%,#08111C 55%,#060D16 100%)!important;color:#EAF1FA}
+.dpage .kicker{color:#36B8FF}
+.dpage h1{color:#fff}
+.dpage h1 .thin{color:#9DB4D0}
+.dpage .rule{background:#2F6BFF}
+.dpage .footer{color:#6E86A3;border-color:rgba(120,160,220,.16)}
+.dpage .card,.dpage .card.soft{background:rgba(255,255,255,.04);border:1px solid rgba(120,160,220,.16);box-shadow:none}
+.dpage .card p,.dpage .card li{color:#C3D4E8}
+.dpage .card .idx{color:#36B8FF}
+.dpage .card::before{background:linear-gradient(180deg,#2F6BFF,#36B8FF)}
+.dpage .kv{color:#C3D4E8}.dpage .kv b{color:#fff}
+.dpage .note{color:#7E96B4}
+.dpage .bignum{font-size:56px;font-weight:900;letter-spacing:-2px;color:rgba(120,170,255,.35);line-height:1}
+.dpage .dsec{font-size:9px;letter-spacing:.2em;color:#7E96B4;font-weight:800}
+.dpage .dline{height:1px;background:rgba(120,160,220,.16);margin:10px 0}
+.dpage .mtx th{background:#12233C;color:#9FC0FF;border-color:#1E3556}
+.dpage .mtx td{background:transparent;color:#C3D4E8;border-color:#1E3556}
+.dpage .mtx td:first-child{color:#fff}
+.dpage .chainbox{background:rgba(255,255,255,.04);border-color:rgba(120,160,220,.16)}
+.dpage .chainbox b{color:#fff}.dpage .chainbox span{color:#A9C0DC}
+.dpage .step{background:rgba(255,255,255,.05);border-color:rgba(120,160,220,.16)}
+.dpage .step h4{color:#fff}.dpage .step p{color:#C3D4E8}
+.dpage .pull{background:linear-gradient(90deg,#12233C,#0B1426)}
+.dpage .pull .pt{color:#fff}
+.dpage .tag{color:#36B8FF;border-color:#2A4A78;background:#10233C}
+.dpage .mini-card{background:rgba(255,255,255,.04);border-color:rgba(120,160,220,.16);color:#C3D4E8}
+.dpage .tl-body p{color:#C3D4E8}.dpage .tl-body h4{color:#fff}.dpage .tl-date{color:#36B8FF}.dpage .tl-body .mini{color:#7E96B4}
+.dpage .sectitle{color:#fff}
 /* scroll mode */
 html,body{height:auto;overflow-x:hidden;overflow-y:auto;background:#04070D}
 #viewport{position:static;display:block;padding:0}
@@ -367,40 +396,35 @@ table.tf tr:nth-child(even) td:not(:first-child){background:#FAFCFF}
 </section>
 
 
-<section data-n="03" class="slide">
+<section data-n="03" class="slide dpage">
   <div class="pad">
     <div class="kicker r">03 / 工作方法</div>
     <h1 class="r" style="--d:.06s">我如何把一个模糊问题<span class="thin">变成可交付的研究结果</span></h1>
     <div class="rule r" style="--d:.1s"></div>
-    <p class="sub r" style="--d:.14s;max-width:1000px">研究工作的难点不只是找到信息，而是知道为什么需要这些信息、如何判断它是否可靠，以及最后能为业务决策提供什么帮助。</p>
-    <div class="flowdark r" style="--d:.2s;margin-top:16px">
-      <div class="fs"><div class="fn">01</div><h4>定义问题</h4><p>先确认核心问题与决策背景：进入新市场时，优先了解需求、竞品位置、渠道特点，还是购买障碍？</p><div class="fo">交付：研究问题清单与分析范围</div></div>
-      <div class="fs"><div class="fn">02</div><h4>寻找证据</h4><p>根据目标选择来源：企业官方信息、电商平台、用户评价、行业报告与公开讨论；记录来源、时间、适用范围与局限。</p><div class="fo">交付：来源表与原始资料库</div></div>
-      <div class="fs"><div class="fn">03</div><h4>整理比较</h4><p>把分散信息转成统一字段，用 Excel 建立价格、功能、定位、渠道与需求维度的比较。</p><div class="fo">交付：数据底表、竞品矩阵与初步发现</div></div>
-      <div class="fs"><div class="fn">04</div><h4>验证判断</h4><p>对重要结论做跨来源对比，关注不同平台说法是否一致；冲突或信息不足处保留疑问，不把推测当事实。</p><div class="fo">交付：证据说明、关键判断与研究限制</div></div>
-      <div class="fs"><div class="fn">05</div><h4>形成建议</h4><p>转化为结构化 PPT、Brief 或建议清单，回答：发现了什么？为什么重要？下一步验证或做什么？</p><div class="fo">交付：研究报告与优先级建议</div></div>
+    <p class="sub r" style="--d:.14s;max-width:1040px;color:#A9BCD6">研究工作的难点不只是找到信息，而是知道为什么需要这些信息、如何判断它是否可靠，以及最后能为业务决策提供什么帮助。</p>
+    <div class="grid" style="grid-template-columns:repeat(5,1fr);gap:16px;margin-top:20px">
+      <div class="r" style="--d:.18s"><div class="bignum">01</div><div class="dsec" style="margin-top:6px">定义问题</div><p style="font-size:10px;line-height:1.65;color:#C3D4E8;margin-top:5px">先确认核心问题与决策背景：进入新市场时，优先了解需求、竞品位置、渠道特点，还是购买障碍？</p><div class="dline"></div><div style="font-size:9px;color:#7E96B4">交付：研究问题清单与分析范围</div></div>
+      <div class="r" style="--d:.24s"><div class="bignum">02</div><div class="dsec" style="margin-top:6px">寻找证据</div><p style="font-size:10px;line-height:1.65;color:#C3D4E8;margin-top:5px">根据目标选择来源：企业官方信息、电商平台、用户评价、行业报告与公开讨论；记录来源、时间、适用范围与局限。</p><div class="dline"></div><div style="font-size:9px;color:#7E96B4">交付：来源表与原始资料库</div></div>
+      <div class="r" style="--d:.3s"><div class="bignum">03</div><div class="dsec" style="margin-top:6px">整理比较</div><p style="font-size:10px;line-height:1.65;color:#C3D4E8;margin-top:5px">把分散信息转成统一字段，用 Excel 建立价格、功能、定位、渠道与需求维度的比较。</p><div class="dline"></div><div style="font-size:9px;color:#7E96B4">交付：数据底表、竞品矩阵与初步发现</div></div>
+      <div class="r" style="--d:.36s"><div class="bignum">04</div><div class="dsec" style="margin-top:6px">验证判断</div><p style="font-size:10px;line-height:1.65;color:#C3D4E8;margin-top:5px">对重要结论做跨来源对比，关注不同平台说法是否一致；冲突或信息不足处保留疑问，不把推测当事实。</p><div class="dline"></div><div style="font-size:9px;color:#7E96B4">交付：证据说明、关键判断与研究限制</div></div>
+      <div class="r" style="--d:.42s"><div class="bignum">05</div><div class="dsec" style="margin-top:6px">形成建议</div><p style="font-size:10px;line-height:1.65;color:#C3D4E8;margin-top:5px">转化为结构化 PPT、Brief 或建议清单，回答：发现了什么？为什么重要？下一步验证或做什么？</p><div class="dline"></div><div style="font-size:9px;color:#7E96B4">交付：研究报告与优先级建议</div></div>
     </div>
     <div class="grid g2" style="margin-top:14px">
-      <div class="card soft r" style="--d:.3s"><div class="idx">INPUT → PROCESS → OUTPUT</div><p style="margin-top:4px">输入信息：公开资料、用户反馈、渠道页面；研究加工：字段统一、交叉核验、比较与判断；业务输出：简报、矩阵、建议清单。</p></div>
-      <div class="card soft r" style="--d:.34s"><div class="idx">我的原则</div><p style="margin-top:4px">从信息走向结论需要证据，从结论走向行动需要判断。我希望研究不仅能被阅读，也能被进一步讨论和使用。</p></div>
+      <div class="card r" style="--d:.48s"><div class="idx">INPUT → PROCESS → OUTPUT</div><p style="margin-top:4px">输入信息：公开资料、用户反馈、渠道页面；研究加工：字段统一、交叉核验、比较与判断；业务输出：简报、矩阵、建议清单。</p></div>
+      <div class="card r" style="--d:.52s"><div class="idx">我的原则</div><p style="margin-top:4px">从信息走向结论需要证据，从结论走向行动需要判断。我希望研究不仅能被阅读，也能被进一步讨论和使用。</p></div>
     </div>
-    <div class="grid g3" style="margin-top:12px">
-      <div class="card r" style="--d:.4s"><div class="idx">方法示例 · 研究问题</div><p style="margin-top:4px">“某消费科技品牌进入欧美市场，优先了解需求、竞品位置、渠道特点，还是购买障碍？”→ 拆成 3 个可验证子问题。</p></div>
-      <div class="card r" style="--d:.44s"><div class="idx">方法示例 · 证据</div><p style="margin-top:4px">官网 + 电商页面 + 用户评论 + KOL 内容，分别回答“品牌怎么说、用户怎么想、渠道怎么卖”。</p></div>
-      <div class="card r" style="--d:.48s"><div class="idx">方法示例 · 交付</div><p style="margin-top:4px">竞品矩阵 + 一页结论建议，写明依据、限制与下一步要验证的问题。</p></div>
+    <div class="grid g3" style="margin-top:10px">
+      <div class="card r" style="--d:.56s"><div class="idx">方法示例 · 研究问题</div><p style="margin-top:3px">“某消费科技品牌进入欧美市场，优先了解需求、竞品位置、渠道特点，还是购买障碍？”→ 拆成 3 个可验证子问题。</p></div>
+      <div class="card r" style="--d:.58s"><div class="idx">方法示例 · 证据</div><p style="margin-top:3px">官网 + 电商页面 + 用户评论 + KOL 内容，分别回答“品牌怎么说、用户怎么想、渠道怎么卖”。</p></div>
+      <div class="card r" style="--d:.6s"><div class="idx">方法示例 · 交付</div><p style="margin-top:3px">竞品矩阵 + 一页结论建议，写明依据、限制与下一步要验证的问题。</p></div>
     </div>
-    <div class="card r" style="--d:.52s;margin-top:11px"><div class="idx">一个真实例子 · 城巴课程项目</div>
-      <div class="grid g3" style="margin-top:8px">
-        <div><div class="idx" style="color:#7B8AA0">问题</div><p style="margin-top:3px">香港城巴车队电动化：技术、经济、运营条件是否具备？</p></div>
-        <div><div class="idx" style="color:#7B8AA0">我做的</div><p style="margin-top:3px">拆可行性与实施规划：车辆/充电设施/电网、资本投入与运营节省、班次连续性与替换节奏。</p></div>
-        <div><div class="idx" style="color:#7B8AA0">交付</div><p style="margin-top:3px">短中长期路线与配套建议，英文 PPT 纳入 33 页小组材料。</p></div>
-      </div></div>
+    <div class="card r" style="--d:.64s;margin-top:10px"><div class="idx">一个真实例子 · 城巴课程项目</div><p style="margin-top:3px">问题：香港城巴车队电动化，技术/经济/运营条件是否具备？我拆可行性与实施规划：车辆、充电设施与电网、资本投入与运营节省、班次连续性与替换节奏；交付短中长期路线与配套建议，英文 PPT 纳入 33 页小组材料。</p></div>
     <div class="footer"><span>黄呈祺 · 简历作品集</span><span class="num">03 / 15</span></div>
   </div>
 </section>
 
 
-<section data-n="04" class="slide">
+<section data-n="04" class="slide dpage">
   <div class="pad">
     <div class="kicker r">04 / 教育与经历</div>
     <h1 class="r" style="--d:.06s">从经济学训练，<span class="thin">到行业研究与实际项目</span></h1>
@@ -566,36 +590,40 @@ table.tf tr:nth-child(even) td:not(:first-child){background:#FAFCFF}
 </section>
 
 
-<section data-n="09" class="slide">
+<section data-n="09" class="slide dpage">
   <div class="pad">
     <div class="kicker r">09 / 研究项目 · 结论与建议</div>
     <h1 class="r" style="--d:.06s">从品牌对比，<span class="thin">走向可以验证的市场建议</span></h1>
     <div class="rule r" style="--d:.1s"></div>
-    <div class="grid" style="grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
+    <div class="grid" style="grid-template-columns:1fr 1fr;gap:22px;margin-top:14px">
       <div class="grid" style="gap:9px">
         <div class="card r" style="--d:.16s"><div class="idx">Anker · 强调搜索与评价中的确定性</div><p style="margin-top:4px">清晰的功能参数与兼容性说明；关注评价中的高频疑问；比较渠道信息一致性；优化购买前最易产生疑虑的信息。</p></div>
         <div class="card r" style="--d:.22s"><div class="idx">Insta360 · 用场景内容解释价值</div><p style="margin-top:4px">围绕不同用户与拍摄场景组织内容；重视真实效果与易理解的演示；比较创作者内容与官方卖点；让体验差异更直观。</p></div>
         <div class="card r" style="--d:.28s"><div class="idx">EcoFlow · 降低高客单决策的不确定性</div><p style="margin-top:4px">加强安全、性能与售后信息的可理解性；围绕具体场景解释价值；比较渠道对能力与服务的说明；研究购买前最担心的问题。</p></div>
       </div>
-      <div class="darkcard r" style="--d:.24s"><div class="idx">GTM 验证路线</div>
-        <div class="kv"><b>1</b><span>选定目标市场与用户群</span></div>
-        <div class="kv"><b>2</b><span>核验渠道、竞品与需求规模</span></div>
-        <div class="kv"><b>3</b><span>明确购买障碍与沟通信息</span></div>
-        <div class="kv"><b>4</b><span>设计小规模内容或渠道验证</span></div>
-        <div class="kv"><b>5</b><span>按真实结果调整判断</span></div>
+      <div>
+        <div class="r" style="--d:.24s"><div class="dsec">GTM 验证路线</div>
+          <div style="margin-top:8px">
+            <div class="kv"><b>1</b><span>选定目标市场与用户群</span></div>
+            <div class="kv"><b>2</b><span>核验渠道、竞品与需求规模</span></div>
+            <div class="kv"><b>3</b><span>明确购买障碍与沟通信息</span></div>
+            <div class="kv"><b>4</b><span>设计小规模内容或渠道验证</span></div>
+            <div class="kv"><b>5</b><span>按真实结果调整判断</span></div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="grid g3" style="margin-top:11px">
+    <div class="grid g3" style="margin-top:12px">
       <div class="card r" style="--d:.32s"><div class="idx">我能承担 · 资料与底稿</div><p style="margin-top:3px">来源收集、字段统一、台账维护，把研究过程留成可复查的底稿。</p></div>
       <div class="card r" style="--d:.35s"><div class="idx">我能承担 · 竞品与渠道</div><p style="margin-top:3px">竞品矩阵、渠道动作、内容与用户反馈的比较分析。</p></div>
       <div class="card r" style="--d:.38s"><div class="idx">我能承担 · 中英文材料</div><p style="margin-top:3px">中文报告、英文 Brief、汇报 PPT，把结论讲清楚并保留限制说明。</p></div>
     </div>
-    <div class="grid g3" style="margin-top:11px">
+    <div class="grid g3" style="margin-top:10px">
       <div class="card r" style="--d:.41s"><div class="idx">第 1–2 周</div><p style="margin-top:3px">补齐市场与竞品数据，确认目标人群与核心场景。</p></div>
       <div class="card r" style="--d:.44s"><div class="idx">第 3–4 周</div><p style="margin-top:3px">把结论转成可验证的内容/渠道假设，定义判断指标。</p></div>
       <div class="card r" style="--d:.47s"><div class="idx">第 5–6 周</div><p style="margin-top:3px">小规模验证，按真实反馈修正建议，输出复盘。</p></div>
     </div>
-    <div class="card r" style="--d:.5s;margin-top:11px"><div class="idx">研究边界</div><p style="margin-top:4px">以上属于独立市场研究提出的分析与建议，尚未进行真实营销实验、销售转化验证或商业化执行。</p></div>
+    <div class="card r" style="--d:.5s;margin-top:10px"><div class="idx">研究边界</div><p style="margin-top:3px">以上属于独立市场研究提出的分析与建议，尚未进行真实营销实验、销售转化验证或商业化执行。</p></div>
     <div class="footer"><span>黄呈祺 · 简历作品集</span><span class="num">09 / 15</span></div>
   </div>
 </section>
@@ -623,7 +651,7 @@ table.tf tr:nth-child(even) td:not(:first-child){background:#FAFCFF}
 </section>
 
 
-<section data-n="11" class="slide">
+<section data-n="11" class="slide dpage">
   <div class="pad">
     <div class="kicker r">11 / 工作经历 · 海南立诚</div>
     <h1 class="r" style="--d:.06s">在真实评估项目中<span class="thin">建立证据意识与执行能力</span></h1>
@@ -654,7 +682,7 @@ table.tf tr:nth-child(even) td:not(:first-child){background:#FAFCFF}
 </section>
 
 
-<section data-n="12" class="slide">
+<section data-n="12" class="slide dpage">
   <div class="pad">
     <div class="kicker r">12 / 实习经历 · 新湖期货</div>
     <h1 class="r" style="--d:.06s">理解动态市场信息<span class="thin">如何影响行业判断</span></h1>
